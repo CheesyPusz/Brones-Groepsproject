@@ -11,7 +11,13 @@ public class mapbutton : MonoBehaviour
         MapImage.SetActive(false);
         isMapVisible = false;
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ToggleMap();
+        }
+    }
     public void ToggleMap()
     {
         isMapVisible = !isMapVisible;
