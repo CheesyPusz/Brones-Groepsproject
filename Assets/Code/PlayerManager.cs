@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
     }
 
+
     void Update()
     {
         Vector3 moveDirection = Vector3.zero;
