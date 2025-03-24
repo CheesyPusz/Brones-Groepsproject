@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7c5a47bd0f4dad74e8d3176ebd98b30c
+guid: cb496387a42ebe946ae91acd72e1414d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7916616429904716567
-    second: an-8-bit-retro-styled-pixel-art-illustration-of-a-golden-skeleton-free-png_0
+      213: -210983749572860536
+    second: botbreuk info_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: an-8-bit-retro-styled-pixel-art-illustration-of-a-golden-skeleton-free-png_0
+      name: botbreuk info_0
       rect:
         serializedVersion: 2
-        x: 258
+        x: 0
         y: 0
-        width: 479
-        height: 980
+        width: 1000
+        height: 409
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 713ed7fe2b87ddd60800000000000000
-      internalID: 7916616429904716567
+      spriteID: 8856459c56f621df0800000000000000
+      internalID: -210983749572860536
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      an-8-bit-retro-styled-pixel-art-illustration-of-a-golden-skeleton-free-png_0: 7916616429904716567
+      botbreuk info_0: -210983749572860536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
