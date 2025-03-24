@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            limit = 1600;
+            limit = 2230;
         }
     }
 
