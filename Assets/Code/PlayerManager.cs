@@ -5,10 +5,10 @@ public class PlayerManager : MonoBehaviour
 {
     public float speed = 5f;
     public static PlayerManager Singleton;
-
+    public bool routeA;
     private SpriteRenderer playerSprite;
     private bool facingRight = true; // Houdt bij of de speler naar rechts kijkt
-
+    private int limit;
     private void Awake()
     {
         if (Singleton == null)
@@ -24,6 +24,14 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
+        if (!routeA)
+        {
+            limit = 3366;
+        }
+        else
+        {
+            limit = 1600;
+        }
     }
 
     void Update()
@@ -31,8 +39,8 @@ public class PlayerManager : MonoBehaviour
         Vector3 moveDirection = Vector3.zero;
 
         // Beweging met WASD en pijltjestoetsen
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) moveDirection.x -= 1;
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) moveDirection.x += 1;
+        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && transform.position.x > -133) moveDirection.x -= 1;
+        if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && transform.position.x < limit)  moveDirection.x += 1;
 
         // Verander de richting van de speler
         if (moveDirection.x > 0 && !facingRight)
