@@ -85,7 +85,7 @@ public class LoginManager : MonoBehaviour
         string password = passwordField.text;
         if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
-            Debug.LogError("Username or password is empty");
+            Debug.Log("Username or password is empty");
             return;
         }
         Debug.Log($"Logging in with username: {username} and password: {password} with difficulty: {difficulty}");
@@ -99,7 +99,7 @@ public class LoginManager : MonoBehaviour
         string password = passwordField.text;
         if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
         {
-            Debug.LogError("Username or password is empty");
+            Debug.Log("Username or password is empty");
             return;
         }
         if (difficulty == "not selected" || selectedRoute == "not selected")
