@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro; // Vergeet niet TextMeshPro te importeren
-
+using UnityEngine.SceneManagement;
 public class TreePopup : MonoBehaviour
 {
     public GameObject popupUI;        // De UI-container met afbeelding en tekst
@@ -13,7 +13,10 @@ public class TreePopup : MonoBehaviour
     {
         popupUI.SetActive(false); // Verberg de popup bij de start
     }
-
+    public void backToIntro()
+    {
+        SceneManager.LoadScene("IntroductieScherm");
+    }
     private void Update()
     {
         if (player != null)

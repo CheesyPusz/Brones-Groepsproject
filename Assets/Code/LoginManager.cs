@@ -116,7 +116,7 @@ public class LoginManager : MonoBehaviour
 
         Debug.Log($"Registering with username: {username}, password: {password} with difficulty: {difficulty}");
 
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("IntroductieScherm");
         await Task.Delay(1000); // added this so i can have an asyn Register(), which is needed for awaiting the webrequest. afterwards delete this await Task.Delay(1000)
     }
 
