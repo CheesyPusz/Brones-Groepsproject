@@ -302,7 +302,10 @@ MonoBehaviour:
   player: {fileID: 1999509015}
   triggerX: 915
   hideX: 1135
-  Message: 'Stap 3:'
+  Message: "Stap 3: Onderzoek De Dokters hebben naar de foto\u2019s gekeken en hebben
+    gezien dat het bot een operatie nodig heeft om goed te kunnen genezen. Dat klinkt
+    natuurlijk enorm eng en spannend maar ik heb ook een operatie moeten doen toen
+    ik mijn spaakbeen had gebroken (ja echt!) "
 --- !u!4 &55256642
 Transform:
   m_ObjectHideFlags: 0
@@ -335,7 +338,10 @@ MonoBehaviour:
   player: {fileID: 1999509015}
   triggerX: 25
   hideX: 130
-  Message: Stap 1
+  Message: "Stap 1: Aankomst spoed Je hebt zojuist misschien wat gebroken daarna
+    ben je (waarschijnlijk) gelijk naar het ziekenhuis gegaan. Dat was vast even
+    schrikken!! Hierna kwam je aan bij de spoedeisende hulp waar er foto\u2019s van
+    je bot zijn gemaakt om te kijken of en hoe het gebroken is. "
 --- !u!114 &55256644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +359,9 @@ MonoBehaviour:
   player: {fileID: 1999509015}
   triggerX: 1350
   hideX: 1450
-  Message: 'Stap 4:'
+  Message: 'Stap 4: Operatie Gelukkig zul je tijdens de operatie geen last hebben
+    aangezien je een speciaal masker op krijgt wat zorgt dat je in slaap valt zodat
+    je niks voelt. Na de operatie Zal de dokter gips aanbrengen '
 --- !u!114 &55256645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +379,9 @@ MonoBehaviour:
   player: {fileID: 1999509015}
   triggerX: 450
   hideX: 550
-  Message: 'Stap 2:'
+  Message: "Stap 2: Beoordeling De Dokters gaan kijken naar de foto\u2019s van je
+    botten om te zien wat er aan de hand is en dus ook of het gebroken is of niet
+    en hoe ze het beste kunnen zorgen dat jouw breuk geneest "
 --- !u!114 &55256646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,7 +399,12 @@ MonoBehaviour:
   player: {fileID: 1999509015}
   triggerX: 3200
   hideX: 3366
-  Message: 'Stap 7:'
+  Message: 'Stap 7: Gips verwijderen Het is nu al een paar weken verder sinds je
+    je bot hebt gebroken, Ik hoop dat alles goed gegaan is en je er niet al te veel
+    last van heb gehad. Het gips mag er eindelijk af nu en ik ga je vertellen hoe
+    de dokter dat gaat doen. Dat doet die namelijk met een zaagje dat klinkt natuurlijk
+    nogal vreemd dat de dokter met een zaagje op je gaat snijden maar het zaagje
+    kan niet door huid snijden en alleen door harde dingen dus niet door je arm!! '
 --- !u!114 &55256647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +422,10 @@ MonoBehaviour:
   player: {fileID: 1999509015}
   triggerX: 2585
   hideX: 2686
-  Message: 'Stap 6:'
+  Message: 'Stap 6: Dagelijks leven  Je mag nu weer naar huis nu het gips er op zit
+    je moet wel voorzichtig zijn zo mag het gips bijvoorbeeld niet nat worden en
+    je kan bijvoorbeeld tijdelijk niet naar gymles op school of voetballen maar er
+    zit ook een pluspunt aan mensen kunnen nu lekker met een stift op jouw gips tekenen!!  '
 --- !u!114 &55256648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +443,11 @@ MonoBehaviour:
   player: {fileID: 1999509015}
   triggerX: 2050
   hideX: 2150
-  Message: 'Stap 5:'
+  Message: 'Stap 5: Herstel operatie Het kan zijn dat je wat moe ben van de operatie
+    en even rustig aan moet doen om te herstellen maar dat is niet het enige want
+    ook gips word aangebracht zodat je bot vast zit en het niet kan bewegen zodat
+    het bot weer kan genezen je zal hierdoor geen last van je breuk hebben!! buiten
+    misschien wat jeuk maar dat betekent dat je lichaam hard aan het werk is!  '
 --- !u!1001 &80538437
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,18 +21,25 @@ public class IntroManager : MonoBehaviour
         //Naam kind ophalen
         //route ophalen
     }
-    public void LogOut()
+    public void Logout()
     {
-        Debug.Log("Log out");
-        SceneManager.LoadScene("LoginScene");
-        //PlayerPrefs.DeleteAll();
+        ClearTokens(); // Verwijdert tokens
+        SceneManager.LoadScene("LoginScene"); // Terug naar inlogscherm
+    }
+
+    public void ClearTokens()
+    {
+        Debug.Log("Succesvol uitgelogd");
+        PlayerPrefs.DeleteKey("accessToken");
+        PlayerPrefs.DeleteKey("refreshToken");
+        PlayerPrefs.Save();
     }
     public void TestGegevens()
     {
         Count = 0;
         Name = "Test123";
-        //route = "A";
-        route = "B";
+        route = "A";
+        //route = "B";
     }
     public void IncreaseCount()
     {
@@ -61,8 +68,9 @@ public class IntroManager : MonoBehaviour
             else if (Count == 3) { m_Text.text = Text4();}
             else if (Count == 4) { m_Text.text = Text5(); }
             else if (Count == 5) { m_Text.text = Text6(); }
-             else if (Count == 6 && route =="B") { SceneManager.LoadScene("Route B"); }
-            else if (Count == 6 && route =="A") { SceneManager.LoadScene("Route A"); }
+            else if (Count == 6) { m_Text.text = Text7(); }
+            else if (Count == 7 && route =="B") { SceneManager.LoadScene("Route B"); }
+            else if (Count == 7 && route =="A") { SceneManager.LoadScene("Route A"); }
         //}
 
     }
@@ -98,7 +106,11 @@ public class IntroManager : MonoBehaviour
     }
     private string Text6()
     {
-        return $"Bewegen doe je met de pijltjes toetsen voor links en naar rechts of met de knoppen A en D op het toetsenbord \n{Name} heel veel succes";
+        return $"Bewegen doe je met de pijltjes toetsen voor links en naar rechts of met de knoppen A en D op het toetsenbord!!";
+    }
+    private string Text7() 
+    {
+        return $"Onderweg Komen we stukjes informatie tegen. Door weer door te bewegen verdwijnen deze automatisch!\n {Name} heel veel succes";
     }
     #endregion
 }

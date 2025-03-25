@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1301389974}
         m_TargetAssemblyTypeName: IntroManager, Assembly-CSharp
-        m_MethodName: LogOut
+        m_MethodName: Logout
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
