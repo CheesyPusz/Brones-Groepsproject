@@ -11,37 +11,37 @@ public class IntroManager : MonoBehaviour
     private string Name;
     private string route;
     private string Text;
-    private void Update()
+    private void Update() // zorgt datde Change methode ieder frame word aangeroepen zodat de juiste tekst wordt weergegeven
     {
         Change();
     }
-    private void Start()
+    private void Start()//Zorgt dat als de scene word geladen de juiste gegevens worden opgehaald
     {
         TestGegevens();
         //Naam kind ophalen
         //route ophalen
     }
-    public void Logout()
+    public void Logout()                                                                                                                                                                                   
     {
         ClearTokens(); // Verwijdert tokens
-        SceneManager.LoadScene("LoginScene"); // Terug naar inlogscherm
+        SceneManager.LoadScene("LoginScene"); // Laad het inlogscherm
     }
 
-    public void ClearTokens()
+    public void ClearTokens() //verwijdert de tokens die opgelsagen zijn bij het inloggen
     {
         Debug.Log("Succesvol uitgelogd");
         PlayerPrefs.DeleteKey("accessToken");
         PlayerPrefs.DeleteKey("refreshToken");
         PlayerPrefs.Save();
     }
-    public void TestGegevens()
+    public void TestGegevens() // deze gegevns worden gebruikt om te testen voordat de api werkt
     {
         Count = 0;
         Name = "Test123";
         route = "A";
         //route = "B";
     }
-    public void IncreaseCount()
+    public void IncreaseCount() //
     {
         Count++;
         //Change();
@@ -51,17 +51,8 @@ public class IntroManager : MonoBehaviour
         Count--;
         //Change();
     }
-    private void Change()
-    {/*
-        if(route == "A")
-        {
-            if (Count == 0) { m_Text.text = Text1A(); }
-            else if (Count == 1) { SceneManager.LoadScene("Route A"); }
-            else if (Count == 2) { SceneManager.LoadScene("Route A"); }
-            else if (Count == 3) { SceneManager.LoadScene("Route A"); }
-        }
-        else if (route=="B") 
-        {*/
+    private void Change() // deze methode zorgt dat voor elke keer als er geklikt word de juiste tekst word geladen
+    {
             if (Count == 0) { m_Text.text = Text1();}
             else if (Count == 1) { m_Text.text = Text2();}
             else if (Count == 2) { m_Text.text = Text3();}
@@ -69,11 +60,10 @@ public class IntroManager : MonoBehaviour
             else if (Count == 4) { m_Text.text = Text5(); }
             else if (Count == 5) { m_Text.text = Text6(); }
             else if (Count == 6) { m_Text.text = Text7(); }
-            else if (Count == 7 && route =="B") { SceneManager.LoadScene("Route B"); }
+            else if (Count == 7 && route =="B") { SceneManager.LoadScene("Route B"); } //de Route worden na de tekst geladen
             else if (Count == 7 && route =="A") { SceneManager.LoadScene("Route A"); }
-        //}
-
     }
+    // de methodes waar de Teksten in staan:
     #region Texten 
     private string Text1()
     {

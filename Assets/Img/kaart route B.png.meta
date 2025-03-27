@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kaart route B_0: -4488486325850285966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

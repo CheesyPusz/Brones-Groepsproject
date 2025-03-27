@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class TreePopup : MonoBehaviour
 {
     public GameObject popupUI;        // De UI-container met afbeelding en tekst
-    public TextMeshProUGUI popupText; // De tekst die wordt weergegeven
+    public TextMeshProUGUI popupText; // Het tekst element
     public GameObject player;         // De speler
     public float triggerX;            // De x-waarde waarop de popup verschijnt
     public float hideX;               // De x-waarde waarop de popup verdwijnt
@@ -24,8 +24,8 @@ public class TreePopup : MonoBehaviour
             // Controleer de x-positie van de speler
             if (player.transform.position.x >= triggerX && player.transform.position.x <= hideX)
             {
-                popupUI.SetActive(true); // Toon de UI
-                popupText.text = Message; // Stel de tekst in
+                popupUI.SetActive(true); // Toont het frame voor de text
+                popupText.text = Message; //  De ingstelde teskst word weergegeven
             }
             else
             {
