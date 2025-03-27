@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      amphia2 hosptial 2dPixel_0: -731055881928302320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
