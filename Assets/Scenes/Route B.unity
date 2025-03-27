@@ -337,7 +337,7 @@ MonoBehaviour:
   popupText: {fileID: 1693628032}
   player: {fileID: 1999509015}
   triggerX: 25
-  hideX: 130
+  hideX: 180
   Message: "Stap 1: Aankomst spoed Je hebt zojuist misschien wat gebroken daarna
     ben je (waarschijnlijk) gelijk naar het ziekenhuis gegaan. Dat was vast even
     schrikken!! Hierna kwam je aan bij de spoedeisende hulp waar er foto\u2019s van
@@ -357,8 +357,8 @@ MonoBehaviour:
   popupUI: {fileID: 805853622}
   popupText: {fileID: 1307681649}
   player: {fileID: 1999509015}
-  triggerX: 1350
-  hideX: 1450
+  triggerX: 1300
+  hideX: 1500
   Message: 'Stap 4: Operatie Gelukkig zul je tijdens de operatie geen last hebben
     aangezien je een speciaal masker op krijgt wat zorgt dat je in slaap valt zodat
     je niks voelt. Na de operatie Zal de dokter gips aanbrengen '
@@ -377,8 +377,8 @@ MonoBehaviour:
   popupUI: {fileID: 761261792}
   popupText: {fileID: 472650836}
   player: {fileID: 1999509015}
-  triggerX: 450
-  hideX: 550
+  triggerX: 400
+  hideX: 600
   Message: "Stap 2: Beoordeling De Dokters gaan kijken naar de foto\u2019s van je
     botten om te zien wat er aan de hand is en dus ook of het gebroken is of niet
     en hoe ze het beste kunnen zorgen dat jouw breuk geneest "
@@ -420,8 +420,8 @@ MonoBehaviour:
   popupUI: {fileID: 130112100}
   popupText: {fileID: 924309299}
   player: {fileID: 1999509015}
-  triggerX: 2585
-  hideX: 2686
+  triggerX: 2535
+  hideX: 2735
   Message: 'Stap 6: Dagelijks leven  Je mag nu weer naar huis nu het gips er op zit
     je moet wel voorzichtig zijn zo mag het gips bijvoorbeeld niet nat worden en
     je kan bijvoorbeeld tijdelijk niet naar gymles op school of voetballen maar er
@@ -441,8 +441,8 @@ MonoBehaviour:
   popupUI: {fileID: 1146505867}
   popupText: {fileID: 504910018}
   player: {fileID: 1999509015}
-  triggerX: 2050
-  hideX: 2150
+  triggerX: 2000
+  hideX: 2200
   Message: 'Stap 5: Herstel operatie Het kan zijn dat je wat moe ben van de operatie
     en even rustig aan moet doen om te herstellen maar dat is niet het enige want
     ook gips word aangebracht zodat je bot vast zit en het niet kan bewegen zodat
@@ -797,8 +797,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -933,8 +933,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1069,8 +1069,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1514,8 +1514,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1661,7 +1661,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1823646158}
-  - {fileID: 9077353285041632711}
   - {fileID: 1764963803}
   - {fileID: 543536442}
   - {fileID: 761261793}
@@ -1670,6 +1669,7 @@ RectTransform:
   - {fileID: 1146505868}
   - {fileID: 130112101}
   - {fileID: 1069327622}
+  - {fileID: 9077353285041632711}
   - {fileID: 948955580}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1968,8 +1968,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2192,8 +2192,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3152,6 +3152,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 938268014}
     m_Modifications:
+    - target: {fileID: 626693814950040883, guid: e1084b335c3ddd64b8120d65a75e79ac, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 626693814950040883, guid: e1084b335c3ddd64b8120d65a75e79ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 3148837009584307261, guid: e1084b335c3ddd64b8120d65a75e79ac, type: 3}
       propertyPath: m_Name
       value: Frame (1)

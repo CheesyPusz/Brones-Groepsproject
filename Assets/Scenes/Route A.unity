@@ -331,7 +331,7 @@ MonoBehaviour:
   popupText: {fileID: 1731623656}
   player: {fileID: 1999509015}
   triggerX: 25
-  hideX: 130
+  hideX: 180
   Message: "Stap 1: Aankomst spoed Je hebt zojuist misschien wat gebroken daarna
     ben je (waarschijnlijk) gelijk naar het ziekenhuis gegaan. Dat was vast even
     schrikken!! Hierna kwam je aan bij de spoedeisende hulp waar er foto\u2019s van
@@ -351,8 +351,8 @@ MonoBehaviour:
   popupUI: {fileID: 1070941436}
   popupText: {fileID: 1681838995}
   player: {fileID: 1999509015}
-  triggerX: 1480
-  hideX: 1580
+  triggerX: 1430
+  hideX: 1630
   Message: 'Stap 4: Dagelijks leven  Je mag nu weer naar huis nu het gips er op zit
     je moet wel voorzichtig zijn zo mag het gips bijvoorbeeld niet nat worden en
     je kan bijvoorbeeld tijdelijk niet naar gymles op school of voetballen maar er
@@ -372,8 +372,8 @@ MonoBehaviour:
   popupUI: {fileID: 607564874}
   popupText: {fileID: 835843114}
   player: {fileID: 1999509015}
-  triggerX: 450
-  hideX: 550
+  triggerX: 400
+  hideX: 600
   Message: "Stap 2: Beoordeling De Dokters gaan kijken naar de foto\u2019s van je
     botten om te zien wat er aan de hand is en dus ook of het gebroken is of niet
     en hoe ze het beste kunnen zorgen dat jouw breuk geneest "
@@ -392,8 +392,8 @@ MonoBehaviour:
   popupUI: {fileID: 670114444}
   popupText: {fileID: 459853202}
   player: {fileID: 1999509015}
-  triggerX: 2030
-  hideX: 2130
+  triggerX: 1980
+  hideX: 2180
   Message: 'Stap 5: Gips verwijderen Het is nu al een paar weken verder sinds je
     je bot hebt gebroken, Ik hoop dat alles goed gegaan is en je er niet al te veel
     last van heb gehad. Het gips mag er eindelijk af nu en ik ga je vertellen hoe
@@ -808,8 +808,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -949,8 +949,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1592,8 +1592,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1871,13 +1871,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1823646158}
-  - {fileID: 9077353286860789809}
   - {fileID: 1069366715}
   - {fileID: 607564875}
   - {fileID: 601950623}
   - {fileID: 1070941437}
   - {fileID: 670114445}
   - {fileID: 713214983}
+  - {fileID: 9077353286860789809}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2019,6 +2019,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 938268014}
     m_Modifications:
+    - target: {fileID: 626693814950040883, guid: e1084b335c3ddd64b8120d65a75e79ac, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 626693814950040883, guid: e1084b335c3ddd64b8120d65a75e79ac, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 3148837009584307261, guid: e1084b335c3ddd64b8120d65a75e79ac, type: 3}
       propertyPath: m_Name
       value: Frame (1)
@@ -2228,8 +2236,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2820,6 +2828,10 @@ PrefabInstance:
       value: 80.8543
       objectReference: {fileID: 0}
     - target: {fileID: 7563978735436329272, guid: 4cce6efcdf73e764e8296955f0b0a26c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563978735436329272, guid: 4cce6efcdf73e764e8296955f0b0a26c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2829,7 +2841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7563978735436329272, guid: 4cce6efcdf73e764e8296955f0b0a26c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7563978735436329272, guid: 4cce6efcdf73e764e8296955f0b0a26c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2870,6 +2882,10 @@ PrefabInstance:
     - target: {fileID: 8299376392076415547, guid: 4cce6efcdf73e764e8296955f0b0a26c, type: 3}
       propertyPath: m_Name
       value: MapA
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299376392076415547, guid: 4cce6efcdf73e764e8296955f0b0a26c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
