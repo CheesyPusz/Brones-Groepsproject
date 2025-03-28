@@ -30,10 +30,10 @@ public class GegevensManager : MonoBehaviour
         toggleA.isOn = false;
         toggleB.isOn = false;
     }
-    public void Continue()
-    {
-        SceneManager.LoadScene("IntroductieScherm");
-    }
+    //public void Continue()
+    //{
+    //    SceneManager.LoadScene("IntroductieScherm");
+    //}
 
     public async void Register()
     {
@@ -78,12 +78,8 @@ public class GegevensManager : MonoBehaviour
         {
             case WebRequestData<string> dataResponse:
                 Debug.Log("Register succes!");
-                // TODO: Handle succes scenario;
-                //ga naar de volgende scene,
-                //geef de id van de patientinfo mee om daar de de juiste route op te halen aan de hand van de info van de patientinfo.
-                //je zou ook Continue(); hier daarna kunnen aanroepen of direct SceneManager.LoadScene("IntroductieScherm");
-                //aanroepen en de continue method verwijderen.
-
+                Debug.Log("Patient info: " + dataResponse.Data);
+                SceneManager.LoadScene("IntroductieScherm");
                 break;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
@@ -94,7 +90,7 @@ public class GegevensManager : MonoBehaviour
             default:
                 throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
         }
-        SceneManager.LoadScene("IntroductieScherm");
+        
     }
 
     public void SelectRouteA(bool toggleValue)

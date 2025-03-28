@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Net;
 using System;
+using UnityEngine.SceneManagement;
 
 public class LoginManager : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class LoginManager : MonoBehaviour
             case WebRequestData<string> dataResponse:
                 Debug.Log("Register succes!");
                 //ga naar de Gegevens scene om daar je patientInfo in  tevullen
+                SceneManager.LoadScene("Gegevens");
                 break;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
@@ -79,20 +81,20 @@ public class LoginManager : MonoBehaviour
         // Call the Login method in UserApiClient
         IWebRequestReponse webRequestResponse = await userApiClient.Login(user);
 
-        // Process the response
-        if (webRequestResponse is WebRequestData<string> dataResponse && dataResponse.Data == "inside ProcessLoginResponse() - Login successful")
+        switch (webRequestResponse)
         {
-            Debug.Log("Login successful! Access token is set.");
-            
-
-            // put code here for setting the token using webClient (stored in PlayerPrefs)
-            //zet de playerprefs voor de UserId die je haalt uit de dataResponse.Data.Id
-            //en ga vervolgens naar de introductiescherm scene om vervolgens de id uit de playerPrefs te halen en te gebruiken
-        }
-        else
-        {
-            Debug.LogError("Login failed or invalid response: " + webRequestResponse?.ToString());
-            // Handle login failure (e.g., show an error message)
+            case WebRequestData<string> dataResponse:
+                Debug.Log("Register succes!");
+                // TODO: Handle succes scenario;
+                SceneManager.LoadScene("IntroductieScherm");
+                break;
+            case WebRequestError errorResponse:
+                string errorMessage = errorResponse.ErrorMessage;
+                Debug.Log("Register error: " + errorMessage);
+                // TODO: Handle error scenario. Show the errormessage to the user.
+                break;
+            default:
+                throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
         }
     }
 

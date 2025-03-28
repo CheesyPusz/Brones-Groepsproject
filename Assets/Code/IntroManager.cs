@@ -4,8 +4,10 @@ using System.Diagnostics.Tracing;
 using UnityEngine.InputSystem;
 using UnityEngine.WSA;
 using UnityEngine.SceneManagement;
+using System;
 public class IntroManager : MonoBehaviour
 {
+    public PatientInfoApiClient patientInfoApiClient;
     private int Count;
     public TMP_Text m_Text;
     private string Name;
@@ -14,10 +16,12 @@ public class IntroManager : MonoBehaviour
     private void Update() // zorgt datde Change methode ieder frame word aangeroepen zodat de juiste tekst wordt weergegeven
     {
         Change();
+        GetPatientInoRoute();
     }
     private void Start()//Zorgt dat als de scene word geladen de juiste gegevens worden opgehaald
     {
-        TestGegevens();
+        //TestGegevens();
+
         //Naam kind ophalen
         //route ophalen
     }
@@ -62,6 +66,30 @@ public class IntroManager : MonoBehaviour
             else if (Count == 6) { m_Text.text = Text7(); }
             else if (Count == 7 && route =="B") { SceneManager.LoadScene("Route B"); } //de Route worden na de tekst geladen
             else if (Count == 7 && route =="A") { SceneManager.LoadScene("Route A"); }
+    }
+
+    public async void GetPatientInoRoute() 
+    {
+        IWebRequestReponse webRequestResponse = await patientInfoApiClient.ReadPatientsInformation();
+
+        switch (webRequestResponse)
+        {
+            case WebRequestData<string> dataResponse:
+                Debug.Log("Got the patient info!");
+                PatientInfo patientInfo = JsonUtility.FromJson<PatientInfo>(dataResponse.Data);
+                string patientRoute = patientInfo.behandelPlan;
+                Debug.Log("Patient route: " + patientRoute);
+
+                break;
+            case WebRequestError errorResponse:
+                string errorMessage = errorResponse.ErrorMessage;
+                Debug.Log("Register error: " + errorMessage);
+                // TODO: Handle error scenario. Show the errormessage to the user.
+
+                break;
+            default:
+                throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
+        }
     }
     // de methodes waar de Teksten in staan:
     #region Texten 
