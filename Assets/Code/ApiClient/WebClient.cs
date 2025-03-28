@@ -9,9 +9,15 @@ public class WebClient : MonoBehaviour
     public string baseUrl;
     private string token;
 
+    public void Start()
+    { 
+        LoadToken();
+    }
+
     public void SetToken(string token)
     {
         this.token = token;
+        PlayerPrefs.SetString("auth_token", token);
     }
 
     public async Awaitable<IWebRequestReponse> SendGetRequest(string route)
@@ -66,7 +72,13 @@ public class WebClient : MonoBehaviour
                 return new WebRequestError(webRequest.error);
         }
     }
- 
+
+
+    private void LoadToken()
+    {
+        token = PlayerPrefs.GetString("auth_token", "");
+    }
+
     private void AddToken(UnityWebRequest webRequest)
     {
         webRequest.SetRequestHeader("Authorization", "Bearer " + token);

@@ -84,6 +84,7 @@ public class LoginManager : MonoBehaviour
         {
             Debug.Log("Login successful! Access token is set.");
             
+
             // put code here for setting the token using webClient (stored in PlayerPrefs)
             //zet de playerprefs voor de UserId die je haalt uit de dataResponse.Data.Id
             //en ga vervolgens naar de introductiescherm scene om vervolgens de id uit de playerPrefs te halen en te gebruiken
