@@ -36,7 +36,7 @@ public class LoginManager : MonoBehaviour
         LoginUser(username, password);
     }
 
-    public async void Register() 
+    public async void Register()
     {
 
         User user = new User
@@ -50,7 +50,7 @@ public class LoginManager : MonoBehaviour
         {
             case WebRequestData<string> dataResponse:
                 Debug.Log("Register succes!");
-               //ga naar de Gegevens scene om daar je patientInfo in  tevullen
+                //ga naar de Gegevens scene om daar je patientInfo in  tevullen
                 break;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
@@ -83,9 +83,10 @@ public class LoginManager : MonoBehaviour
         if (webRequestResponse is WebRequestData<string> dataResponse && dataResponse.Data == "inside ProcessLoginResponse() - Login successful")
         {
             Debug.Log("Login successful! Access token is set.");
-
+            
             // put code here for setting the token using webClient (stored in PlayerPrefs)
-
+            //zet de playerprefs voor de UserId die je haalt uit de dataResponse.Data.Id
+            //en ga vervolgens naar de introductiescherm scene om vervolgens de id uit de playerPrefs te halen en te gebruiken
         }
         else
         {
@@ -94,227 +95,9 @@ public class LoginManager : MonoBehaviour
         }
     }
 
-
-
-
-
-    //private IEnumerator LoginUser(string username, string password)
-    //{
-    //    string jsonBody = $"{{\"email\":\"{username}\",\"password\":\"{password}\"}}";
-    //    byte[] jsonToSend = Encoding.UTF8.GetBytes(jsonBody);
-
-    //    UnityWebRequest request = new UnityWebRequest($"{baseUrl}/Login", "POST");
-    //    request.uploadHandler = new UploadHandlerRaw(jsonToSend);
-    //    request.downloadHandler = new DownloadHandlerBuffer();
-    //    request.SetRequestHeader("Content-Type", "application/json");
-
-    //    yield return request.SendWebRequest();
-
-    //    if (request.result == UnityWebRequest.Result.Success)
-    //    {
-    //        string responseText = request.downloadHandler.text;
-    //        string token = ExtractToken(responseText);
-    //        string refreshToken = ExtractRefreshToken(responseText);
-
-    //        if (!string.IsNullOrEmpty(token) && !string.IsNullOrEmpty(refreshToken))
-    //        {
-    //            AuthManager.Instance.SaveTokens(token, refreshToken);
-    //            UpdateMessage("Login succesvol!", Color.green);
-    //            UnityEngine.SceneManagement.SceneManager.LoadScene("EnvironmentMain");
-    //            //hier moet de volgend
-    //        }
-    //        else
-    //        {
-    //            UpdateMessage("Fout: Geen geldige token ontvangen.", Color.red);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        UpdateMessage("Inloggen mislukt! Controleer je gegevens.", Color.red);
-    //    }
-    //}
-
-    //private IEnumerator RegisterUser(string email, string password)
-    //{
-    //    string jsonBody = $"{{\"email\":\"{email}\",\"password\":\"{password}\"}}";
-    //    byte[] jsonToSend = Encoding.UTF8.GetBytes(jsonBody);
-
-    //    UnityWebRequest request = new UnityWebRequest($"{baseUrl}/register", "POST");
-    //    request.uploadHandler = new UploadHandlerRaw(jsonToSend);
-    //    request.downloadHandler = new DownloadHandlerBuffer();
-    //    request.SetRequestHeader("Content-Type", "application/json");
-
-    //    yield return request.SendWebRequest();
-
-    //    if (request.result == UnityWebRequest.Result.Success)
-    //    {
-    //        UpdateMessage("Registratie succesvol! Je kunt nu inloggen.", Color.green);
-    //    }
-    //    else
-    //    {
-    //        UpdateMessage("Registratie mislukt! Probeer het opnieuw.", Color.red);
-    //    }
-    //}
-
-    //private string ExtractToken(string responseText)
-    //{
-    //    int tokenStartIndex = responseText.IndexOf("\"accessToken\":\"") + "\"accessToken\":\"".Length;
-    //    int tokenEndIndex = responseText.IndexOf("\"", tokenStartIndex);
-
-    //    if (tokenStartIndex >= 0 && tokenEndIndex >= 0)
-    //    {
-    //        return responseText.Substring(tokenStartIndex, tokenEndIndex - tokenStartIndex);
-    //    }
-
-    //    return null;
-    //}
-
-    //private string ExtractRefreshToken(string responseText)
-    //{
-    //    int tokenStartIndex = responseText.IndexOf("\"refreshToken\":\"") + "\"refreshToken\":\"".Length;
-    //    int tokenEndIndex = responseText.IndexOf("\"", tokenStartIndex);
-
-    //    if (tokenStartIndex >= 0 && tokenEndIndex >= 0)
-    //    {
-    //        return responseText.Substring(tokenStartIndex, tokenEndIndex - tokenStartIndex);
-    //    }
-
-    //    return null;
-    //}
-
-    //public void ResetFields()
-    //{
-    //    usernameInputField.text = "";
-    //    passwordInputField.text = "";
-    //    UpdateMessage("Velden gereset!", Color.yellow);
-    //}
-
     private void UpdateMessage(string text, Color color)
     {
         messageLabel.text = text;
         messageLabel.color = color;
     }
-
-
 }
-//using System.Threading.Tasks;
-//using TMPro;
-//using UnityEngine;
-//using UnityEngine.SceneManagement;
-//using UnityEngine.UI;
-
-//public class LoginManager : MonoBehaviour
-//{
-//    [SerializeField] private TMP_InputField emailField;
-//    [SerializeField] private TMP_InputField passwordField;
-    
-//    private string difficulty = "not selected";
-//    private string selectedRoute = "not selected";
-//    void Start()
-//    {
-        
-//    }
-
-//    // Update is called once per frame
-//    void Update()
-//    {
-        
-//    }
-
-//    public void SelectYoungDifficulty(bool toggleValue)
-//    {
-//        if (toggleValue == true)
-//        {
-//            Debug.Log("selected Young child mode");
-//            difficulty = "young";
-//        }
-//        else
-//        {
-//            difficulty = "not selected";
-//        }
-//    }
-
-//    public void SelectOldDifficulty(bool toggleValue) 
-//    {
-//        if (toggleValue == true)
-//        {
-//            Debug.Log("selected old child mode");
-//            difficulty = "old";
-//        }
-//        else 
-//        {
-//            difficulty = "not selected";
-//        }
-//    }
-
-//    public void SelectRouteA(bool toggleValue)
-//    {
-//        if (toggleValue == true)
-//        {
-//            Debug.Log("selected route A: gips");
-//            selectedRoute = "A";
-//            Debug.Log(selectedRoute);
-//        }
-//        else
-//        {
-//            selectedRoute = "not selected";
-//            Debug.Log("desected route A");
-//        }
-//    }
-
-//    public void SelectRouteB(bool toggleValue)
-//    {
-//        if (toggleValue == true)
-//        {
-//            Debug.Log("selected route B: operatie");
-//            selectedRoute = "B";
-//            Debug.Log(selectedRoute);
-//        }
-//        else
-//        {
-//            selectedRoute = "not selected";
-//            Debug.Log("deselected route B");
-//        }
-//    }
-//    public async void Login()
-//    {
-//        string username = emailField.text;
-//        string password = passwordField.text;
-//        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-//        {
-//            Debug.Log("Username or password is empty");
-//            return;
-//        }
-//        Debug.Log($"Logging in with username: {username} and password: {password} with difficulty: {difficulty}");
-//        SceneManager.LoadScene("SampleScene");
-//        await Task.Delay(1000); // added this so i can have an asyn Login(), which is needed for awaiting the webrequest. afterwards delete this await Task.Delay(1000)
-//    }
-
-//    public async void Register()
-//    {
-//        string username = emailField.text;
-//        string password = passwordField.text;
-//        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-//        {
-//            Debug.Log("Username or password is empty");
-//            return;
-//        }
-//        if (difficulty == "not selected" || selectedRoute == "not selected")
-//        {
-//            Debug.Log("Difficulty is not selected");
-//            return;
-//        }
-//        if (selectedRoute == "not selected")
-//        {
-//            Debug.Log("Route is not selected");
-//            return;
-//        }
-//        Debug.Log($"Selected route: {selectedRoute}");
-
-//        Debug.Log($"Registering with username: {username}, password: {password} with difficulty: {difficulty}");
-
-//        SceneManager.LoadScene("IntroductieScherm");
-//        await Task.Delay(1000); // added this so i can have an asyn Register(), which is needed for awaiting the webrequest. afterwards delete this await Task.Delay(1000)
-//    }
-
-//}
