@@ -39,8 +39,13 @@ public class GegevensManager : MonoBehaviour
     {
         string textKind = NaamKind.text;
         string textArts = NaamArts.text;
-        DateTime birthDate = new DateTime(int.Parse(birthDateYear.text), int.Parse(birthDateMonth.text), int.Parse(birthDateDay.text));
+        int yearInt = int.Parse(birthDateYear.text);
+        int monthInt = int.Parse(birthDateMonth.text);
+        int dayInt = int.Parse(birthDateDay.text);
+        DateTime DateOfBirth = new DateTime(yearInt, monthInt, dayInt);
         DateTime afspraakDate = new DateTime(int.Parse(afspraakYear.text), int.Parse(afspraakMonth.text), int.Parse(afspraakDay.text));
+        //Debug.Log(DateOfBirth);
+        //Debug.Log(afspraakDate);
 
         if (string.IsNullOrEmpty(textKind) || string.IsNullOrEmpty(textArts))
         {
@@ -49,36 +54,38 @@ public class GegevensManager : MonoBehaviour
         }
 
         if (selectedRoute == "not selected")
-        {
+        {   
             Debug.Log("Route is not selected");
             return;
         }
 
-        if (birthDate == null || afspraakDate == null)
+        if (DateOfBirth == null || afspraakDate == null)
         {
             Debug.Log("Birthdate or afspraakdate is null");
             return;
         }
 
-        Debug.Log($"Registering with name: {textKind}, docotr: {textArts} with route: {selectedRoute}, with birthDay {birthDate} with afspraak {afspraakDate}");
+        //Debug.Log($"Registering with name: {textKind}, doctor: {textArts} with route: {selectedRoute}, with birthDay {DateOfBirth} with afspraak {afspraakDate}");
 
         //de datums gecommend aangezien de api DateNow gebruikt,
         //in unity is DateNow niet beschikbaar en aangezien alles hier null mag zijn staat het voor nu uitgekommend
         PatientInfo patientInfo = new PatientInfo
         {
+            userId = Guid.NewGuid().ToString(),
+            ownerUserId = Guid.NewGuid().ToString(),
             name = textKind,
-            dateOfBirth = birthDate,
+            dateOfBirth = DateOfBirth.ToString("yyyy-MM-ddTHH:mm:ss"),
             behandelPlan = selectedRoute,
             naamArts = textArts,
-            eersteAfspraak = afspraakDate
+            eersteAfspraak = afspraakDate.ToString("yyyy-MM-ddTHH:mm:ss")
         };
         IWebRequestReponse webRequestResponse = await patientInfoApiClient.CreatePatientInfo(patientInfo);
+        //PlayerPrefs.SetString("PatientName", name);
 
         switch (webRequestResponse)
         {
-            case WebRequestData<string> dataResponse:
-                Debug.Log("Register succes!");
-                Debug.Log("Patient info: " + dataResponse.Data);
+            case WebRequestData<PatientInfo> dataResponse:
+                PlayerPrefs.SetString("PatientName", dataResponse.Data.name);
                 SceneManager.LoadScene("IntroductieScherm");
                 break;
             case WebRequestError errorResponse:
@@ -99,12 +106,11 @@ public class GegevensManager : MonoBehaviour
         {
             Debug.Log("selected route A: gips");
             selectedRoute = "A";
-            Debug.Log(selectedRoute);
         }
         else
         {
             selectedRoute = "not selected";
-            Debug.Log("desected route A");
+            //Debug.Log("desected route A");
         }
     }
 
@@ -114,12 +120,11 @@ public class GegevensManager : MonoBehaviour
         {
             Debug.Log("selected route B: operatie");
             selectedRoute = "B";
-            Debug.Log(selectedRoute);
         }
         else
         {
             selectedRoute = "not selected";
-            Debug.Log("deselected route B");
+            //Debug.Log("deselected route B");
         }
     }
 }

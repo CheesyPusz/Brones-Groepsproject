@@ -67,6 +67,7 @@ public class WebClient : MonoBehaviour
         {
             case UnityWebRequest.Result.Success:
                 string responseData = webRequest.downloadHandler.text;
+                //Debug.Log("Received JSON: " + responseData); // Log the JSON response
                 return new WebRequestData<string>(responseData);
             default:
                 return new WebRequestError(webRequest.error);

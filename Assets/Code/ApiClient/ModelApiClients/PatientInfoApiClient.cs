@@ -9,15 +9,15 @@ public class PatientInfoApiClient : MonoBehaviour
 
     public async Awaitable<IWebRequestReponse> ReadPatientsInformation()
     {
-        string route = "/environments";
+        string route = "/PatientInfo";
 
         IWebRequestReponse webRequestResponse = await webClient.SendGetRequest(route);
-        return ParsePatientInfoListResponse(webRequestResponse);
+        return ParsePatientInfoResponse(webRequestResponse);
     }
 
     public async Awaitable<IWebRequestReponse> CreatePatientInfo(PatientInfo patientInfo)
     {
-        string route = "/environments";
+        string route = "/PatientInfo";
         string data = JsonUtility.ToJson(patientInfo);
 
         IWebRequestReponse webRequestResponse = await webClient.SendPostRequest(route, data);

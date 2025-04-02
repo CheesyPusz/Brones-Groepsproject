@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c86bd7546f1f94e9c106ea19a09157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUrl: https://avansict123213.azurewebsites.net/
+  baseUrl: https://localhost:7183
 --- !u!4 &544598994
 Transform:
   m_ObjectHideFlags: 0
@@ -1369,6 +1369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patientInfoApiClient: {fileID: 544598992}
   m_Text: {fileID: 272998722}
+  Name: 
 --- !u!4 &1301389975
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,6 +1521,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487363355}
   m_CullTransparentMesh: 1
+--- !u!1 &1778244239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1778244241}
+  - component: {fileID: 1778244240}
+  m_Layer: 0
+  m_Name: InstructionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1778244240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778244239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f23b03789e4a844865d537359aed54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patientInfoApiClient: {fileID: 544598992}
+  introManager: {fileID: 0}
+  nameLabel: {fileID: 0}
+--- !u!4 &1778244241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778244239}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1331.3782, y: 704.5853, z: -1.7572715}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796869450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,3 +1658,4 @@ SceneRoots:
   - {fileID: 1023128092}
   - {fileID: 1301389975}
   - {fileID: 544598994}
+  - {fileID: 1778244241}

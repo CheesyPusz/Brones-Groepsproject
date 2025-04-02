@@ -15,6 +15,8 @@ public class LoginManager : MonoBehaviour
     public TMP_InputField passwordInputField;
     public TMP_Text messageLabel;
 
+    bool UserJustRegistered = false;
+
     //private string baseUrl = "https://avansict2237041.azurewebsites.net/account";
 
     public void Login()
@@ -51,8 +53,10 @@ public class LoginManager : MonoBehaviour
         {
             case WebRequestData<string> dataResponse:
                 Debug.Log("Register succes!");
+                UserJustRegistered = true;
+                Login();
                 //ga naar de Gegevens scene om daar je patientInfo in  tevullen
-                SceneManager.LoadScene("Gegevens");
+                //SceneManager.LoadScene("Gegevens");
                 break;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
@@ -84,9 +88,16 @@ public class LoginManager : MonoBehaviour
         switch (webRequestResponse)
         {
             case WebRequestData<string> dataResponse:
-                Debug.Log("Register succes!");
+                Debug.Log("Login succes!");
                 // TODO: Handle succes scenario;
-                SceneManager.LoadScene("IntroductieScherm");
+                if (UserJustRegistered)
+                {
+                    SceneManager.LoadScene("Gegevens");
+                }
+                else
+                {
+                    SceneManager.LoadScene("IntroductieScherm");
+                }
                 break;
             case WebRequestError errorResponse:
                 string errorMessage = errorResponse.ErrorMessage;
