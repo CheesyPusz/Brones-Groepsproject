@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1b6bb51100a7d2c4aa68f6f0edde62bb
+guid: dfe1a82bd3870454690f2a7003dc7545
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -431616239172463449
-    second: amphia hosptial 2dPixel_0
+      213: 6029105736922108961
+    second: 698ad987-1cfe-43ff-9bd4-88e36b9337aa_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: amphia hosptial 2dPixel_0
+      name: 698ad987-1cfe-43ff-9bd4-88e36b9337aa_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 107
-        width: 415
-        height: 312
+        x: 0
+        y: 0
+        width: 1200
+        height: 630
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7a4d5d83157920af0800000000000000
-      internalID: -431616239172463449
+      spriteID: 124138269bfaba350800000000000000
+      internalID: 6029105736922108961
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      amphia hosptial 2dPixel_0: -431616239172463449
+      698ad987-1cfe-43ff-9bd4-88e36b9337aa_0: 6029105736922108961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

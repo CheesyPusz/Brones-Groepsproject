@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoginScene.unity
     guid: d65d276efd7d79d49ace2f223f367823
+  - enabled: 1
+    path: Assets/Scenes/Gegevens.unity
+    guid: 78b52948540626847bd8596d2f0988a0
+  - enabled: 1
+    path: Assets/Scenes/IntroductieScherm.unity
+    guid: 8d399f33469d497469ba07b908feb3ed
+  - enabled: 1
+    path: Assets/Scenes/Route A.unity
+    guid: 97a4416e8f028f64981b3abb965890eb
+  - enabled: 1
+    path: Assets/Scenes/Route B.unity
+    guid: 401af4f1495615a4bb2ca6d2f97abf01
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
