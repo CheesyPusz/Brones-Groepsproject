@@ -20,9 +20,6 @@ public class IntroManager : MonoBehaviour
         Count = 0;
         bool hasJustRegistered = PlayerPrefs.GetInt("HasJustRegistered", 0) == 1;
         SkipButton.gameObject.SetActive(!hasJustRegistered);
-
-        if (SceneManager.GetActiveScene().name == "IntroductieScherm")
-        {
             GetPatientInfo();
             Change();
         }
