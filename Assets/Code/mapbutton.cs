@@ -22,7 +22,7 @@ public class mapbutton : MonoBehaviour
     {
         isMapVisible = !isMapVisible;
         MapImage.SetActive(isMapVisible);
-        buttonText.text = isMapVisible ? "Hide Map" : "Show Map";
+        buttonText.text = isMapVisible ? "Verberg Kaart" : "Kaart";
     }
     //
 }
