@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using UnityEngine.UI;
 
 public class IntroManager : MonoBehaviour
 {
@@ -11,15 +12,19 @@ public class IntroManager : MonoBehaviour
     private int Count;
     public TMP_Text m_Text;
     public string Name;
+    public Button SkipButton;
     private string route;
 
-    private void Start() // Zorgt dat als de scene wordt geladen de juiste gegevens worden opgehaald
+    private void Start() // Zorgt dat als de scene wordt geladen de juiste gegevens worden ospgehaald
     {
+        Count = 0;
+        bool hasJustRegistered = PlayerPrefs.GetInt("HasJustRegistered", 0) == 1;
+        SkipButton.gameObject.SetActive(!hasJustRegistered);
+
         if (SceneManager.GetActiveScene().name == "IntroductieScherm")
         {
             GetPatientInfo();
             Change();
-
         }
     }
 
@@ -34,6 +39,7 @@ public class IntroManager : MonoBehaviour
         Debug.Log("Succesvol uitgelogd");
         PlayerPrefs.DeleteKey("accessToken");
         PlayerPrefs.DeleteKey("refreshToken");
+        PlayerPrefs.DeleteKey("HasJustRegistered");
         PlayerPrefs.Save();
     }
 
@@ -55,6 +61,17 @@ public class IntroManager : MonoBehaviour
     {
         Count--;
         Change();
+    }
+    public void SkipIntro() // Deze functie zorgt ervoor dat je de intro kan overslaan
+    {
+        if (route == "A")
+        {
+            SceneManager.LoadScene("Route A");
+        }
+        else if (route == "B")
+        {
+            SceneManager.LoadScene("Route B");
+        }
     }
 
     private void Change() // Deze methode zorgt dat voor elke keer als er geklikt wordt de juiste tekst wordt geladen
@@ -133,7 +150,7 @@ public class IntroManager : MonoBehaviour
     #region Texten 
     private string Text1()
     {
-        return $"Hallo {Name}!!\nIk ben Gekke Henkie en ik heb al 10 botjes gebroken, omdat ik zo bekend ben met het ziekenhuis ga ik met je mee en leg ik je uit wat er gaat gebeuren";
+        return $"Hallo {Name}!!Ik ben Gekke Henkie en ik heb al 10 botjes gebroken, omdat ik zo bekend ben met het ziekenhuis ga ik met je mee en leg ik je uit wat er gaat gebeuren";
     }
 
     private string Text2()

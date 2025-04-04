@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     public float speed = 5f;
     public static PlayerManager Singleton;
     public bool routeA; //Hierdoor kan je met een knop het limiet aanpassen
-    private SpriteRenderer playerSprite;
+    //private SpriteRenderer playerSprite;
     private bool facingRight = true; // Houdt bij of de speler naar rechts kijkt
     private int limit;
     public GameObject BigPlayerHumanVariant; // Reference to the existing GameObject
@@ -25,10 +25,10 @@ public class PlayerManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    /*
     private void Start()
     {
-        playerSprite = GetComponent<SpriteRenderer>();
+        
         if (!routeA)
         {
             limit = 3366; //limiet voor route B
@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviour
         {
             limit = 2230; //limiet voor route A
         }
-
+    //playerSprite = GetComponent<SpriteRenderer>();
         // Find the existing BigPlayerHumanVariant GameObject
         GameObject playerHuman = GameObject.Find(BigPlayerHumanVariant.name);
         if (playerHuman != null)
@@ -52,6 +52,18 @@ public class PlayerManager : MonoBehaviour
         else
         {
             Debug.LogError("BigPlayerHumanVariant GameObject not found in the hierarchy.");
+        }
+    }*/
+    public void Start()
+    {
+        //deze methode moet die andere in de start tussen /**/ zijn onnodig lijkt me
+        if (!routeA)
+        {
+            limit = 3366; //limiet voor route B
+        }
+        else
+        {
+            limit = 2230; //limiet voor route A
         }
     }
 
