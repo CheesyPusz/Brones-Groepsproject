@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Net;
 using System;
 using UnityEngine.SceneManagement;
+using static System.Net.WebRequestMethods;
 
 public class LoginManager : MonoBehaviour
 {
@@ -90,6 +91,8 @@ public class LoginManager : MonoBehaviour
             case WebRequestData<string> dataResponse:
                 Debug.Log("Login succes!");
                 // TODO: Handle succes scenario;
+                PlayerPrefs.SetInt("HasJustRegistered", UserJustRegistered ? 1 : 0);
+
                 if (UserJustRegistered)
                 {
                     SceneManager.LoadScene("Gegevens");

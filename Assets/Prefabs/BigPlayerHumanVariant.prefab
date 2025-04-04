@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9205824007927017714}
   - component: {fileID: 2745631276080373437}
   m_Layer: 0
-  m_Name: BigPlayerHuman Variant
+  m_Name: BigPlayerHumanVariant
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 3182788601652287883, guid: 9bddef980212a3b449e8509767511b19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,3 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
+  routeA: 0
+  BigPlayerHumanVariant: {fileID: 7525223438952156437}
