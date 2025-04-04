@@ -1,11 +1,14 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 using static UnityEditor.UIElements.ToolbarMenu;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerManager : MonoBehaviour
 {
-    PatientInfoApiClient patientInfoApiClient;
+    public PatientInfoApiClient patientInfoApiClient;
     public float speed = 5f;
     public static PlayerManager Singleton;
     public bool routeA; //Hierdoor kan je met een knop het limiet aanpassen
@@ -13,6 +16,10 @@ public class PlayerManager : MonoBehaviour
     private bool facingRight = true; // Houdt bij of de speler naar rechts kijkt
     private int limit;
     public GameObject BigPlayerHumanVariant; // Reference to the existing GameObject
+
+    private float PositionX;
+
+    PatientInfo patientInfo = new PatientInfo();
 
     private void Awake()
     {
@@ -65,6 +72,16 @@ public class PlayerManager : MonoBehaviour
         {
             limit = 2230; //limiet voor route A
         }
+
+
+        Vector3 newPosition = BigPlayerHumanVariant.transform.position;
+
+        //newPosition.x = PlayerPrefs.GetFloat("PostionX");
+
+        newPosition.x = 0;
+
+        BigPlayerHumanVariant.transform.position = newPosition;
+
     }
 
     void Update()
@@ -91,32 +108,34 @@ public class PlayerManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        UpdatePatientInfo();
+
+        patientInfo.positionX = Mathf.Round(BigPlayerHumanVariant.transform.position.x);
+        PositionX = patientInfo.positionX;
+        UpdatePatientInfo(PositionX);
     }
 
-    public async void UpdatePatientInfo()
+    public async void UpdatePatientInfo(float PositionX)
     {
-        // Find the existing BigPlayerHumanVariant GameObject
-        GameObject playerHuman = GameObject.Find(BigPlayerHumanVariant.name);
-        if (playerHuman != null)
+        Debug.Log("UpdatePatientInfo called");
+        Debug.Log(PositionX);
+
+
+
+        // Update the patient info
+        if (patientInfoApiClient != null)
         {
-            // Retrieve the current x position of the BigPlayerHumanVariant
-            float positionX = playerHuman.transform.position.x;
-
-            // Create a new PatientInfo object with only the positionX field set
-            PatientInfo patientInfo = new PatientInfo()
-            {
-                positionX = positionX
-            };
-
-            // Update the patient info
-            IWebRequestReponse webRequestResponse = await patientInfoApiClient.PutPatientInfo(patientInfo);
+            IWebRequestReponse webRequestResponse = await patientInfoApiClient.PutPatientInfo(PositionX);
 
             switch (webRequestResponse)
             {
                 case WebRequestData<string> dataResponse:
                     string responseData = dataResponse.Data;
+                    Debug.Log("Player updated: " + responseData);
+
+                    PlayerPrefs.SetFloat("PositionX", patientInfo.positionX);
+                    //string responseData = dataResponse.Data;
                     // TODO: Handle success scenario.
+
                     Debug.Log("Patient info updated successfully.");
                     break;
                 case WebRequestError errorResponse:
@@ -127,10 +146,6 @@ public class PlayerManager : MonoBehaviour
                 default:
                     throw new NotImplementedException("No implementation for webRequestResponse of class: " + webRequestResponse.GetType());
             }
-        }
-        else
-        {
-            Debug.LogError("BigPlayerHumanVariant GameObject not found in the hierarchy.");
         }
     }
 

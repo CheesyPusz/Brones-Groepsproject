@@ -1937,6 +1937,65 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 491541696255838393, guid: 626d2d63a7ef14e4eaa76c01b82cf02c, type: 3}
   m_PrefabInstance: {fileID: 854992882}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &892071052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 892071055}
+  - component: {fileID: 892071054}
+  - component: {fileID: 892071053}
+  m_Layer: 0
+  m_Name: ApiClient
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &892071053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892071052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38452f633bae3648b55631c65e9eef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webClient: {fileID: 892071054}
+--- !u!114 &892071054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892071052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c86bd7546f1f94e9c106ea19a09157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseUrl: https://localhost:7183
+--- !u!4 &892071055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892071052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &899969837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,6 +2199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3594f03524c0ba4b98c0d0edddc90d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patientInfoApiClient: {fileID: 892071053}
   speed: 200
   routeA: 0
   BigPlayerHumanVariant: {fileID: 202709258}
@@ -3241,3 +3301,4 @@ SceneRoots:
   - {fileID: 1665017769}
   - {fileID: 1059116720}
   - {fileID: 202709257}
+  - {fileID: 892071055}

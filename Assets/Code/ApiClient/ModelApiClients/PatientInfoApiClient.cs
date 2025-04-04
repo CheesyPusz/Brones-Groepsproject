@@ -24,12 +24,19 @@ public class PatientInfoApiClient : MonoBehaviour
         return ParsePatientInfoResponse(webRequestResponse);
     }
 
-    public async Awaitable<IWebRequestReponse> PutPatientInfo(PatientInfo updatedPatientInfo)
+    public async Awaitable<IWebRequestReponse> PutPatientInfo(float PositionX)
     {
-        string route = "/PatientInfo";
-        string data = JsonUtility.ToJson(updatedPatientInfo);
-        IWebRequestReponse webRequestResponse = await webClient.SendPutRequest(route, data);
-        return ParsePatientInfoResponse(webRequestResponse);
+        var positionX = PositionX.ToString();
+        string route = "/PatientInfo/" + positionX + "/";
+        string data = JsonUtility.ToJson(positionX);
+        // Parser maakt een lege data aan, er is niks om te versturen
+        
+        Debug.Log(data);
+        Debug.Log(positionX);
+
+        return await webClient.SendPutRequest(route, data);
+        //IWebRequestReponse webRequestResponse = await webClient.SendPutRequest(route, data);
+        //return ParsePatientInfoResponse(webRequestResponse);
     }
 
     public async Awaitable<IWebRequestReponse> DeletePatientInfo(string Id)

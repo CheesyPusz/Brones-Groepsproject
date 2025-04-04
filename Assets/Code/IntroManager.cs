@@ -20,9 +20,13 @@ public class IntroManager : MonoBehaviour
         Count = 0;
         bool hasJustRegistered = PlayerPrefs.GetInt("HasJustRegistered", 0) == 1;
         SkipButton.gameObject.SetActive(!hasJustRegistered);
-            GetPatientInfo();
-            Change();
-        }
+        GetPatientInfo();
+        Change();
+        //if (SceneManager.GetActiveScene().name == "IntroductieScherm")
+        //{
+        //    GetPatientInfo();
+        //    Change();
+        //}
     }
 
     public void Logout()
@@ -61,11 +65,11 @@ public class IntroManager : MonoBehaviour
     }
     public void SkipIntro() // Deze functie zorgt ervoor dat je de intro kan overslaan
     {
-        if (route == "A")
+        if (PlayerPrefs.GetString("route") == "A")
         {
             SceneManager.LoadScene("Route A");
         }
-        else if (route == "B")
+        else if (PlayerPrefs.GetString("route") == "B")
         {
             SceneManager.LoadScene("Route B");
         }
@@ -80,8 +84,8 @@ public class IntroManager : MonoBehaviour
         else if (Count == 4) { m_Text.text = Text5(); }
         else if (Count == 5) { m_Text.text = Text6(); }
         else if (Count == 6) { m_Text.text = Text7(); }
-        else if (Count == 7 && route == "B") { SceneManager.LoadScene("Route B"); } // De route wordt na de tekst geladen
-        else if (Count == 7 && route == "A") { SceneManager.LoadScene("Route A"); }
+        else if (Count == 7 && PlayerPrefs.GetString("route") == "B") { SceneManager.LoadScene("Route B"); } // De route wordt na de tekst geladen
+        else if (Count == 7 && PlayerPrefs.GetString("route") == "A") { SceneManager.LoadScene("Route A"); }
     }
 
     public async void GetPatientInfo()
@@ -126,8 +130,9 @@ public class IntroManager : MonoBehaviour
 
                 // Save the name and behandelPlan values in local variables
                 Name = patientInfo.name;
-                route = patientInfo.behandelPlan;
-
+                PlayerPrefs.SetFloat("PositionX", patientInfo.positionX);
+                PlayerPrefs.SetString("name", name);
+                PlayerPrefs.SetString("route", patientInfo.behandelPlan);
                 Debug.Log($"Patient: {patientInfo.name}, Doctor: {patientInfo.naamArts}, Route: {route}");
                 Change();
                 break;
@@ -147,7 +152,7 @@ public class IntroManager : MonoBehaviour
     #region Texten 
     private string Text1()
     {
-        return $"Hallo {Name}!!Ik ben Gekke Henkie en ik heb al 10 botjes gebroken, omdat ik zo bekend ben met het ziekenhuis ga ik met je mee en leg ik je uit wat er gaat gebeuren";
+        return $"Hallo {Name}! Ik ben Gekke Henkie en ik heb al 10 botjes gebroken, omdat ik zo bekend ben met het ziekenhuis ga ik met je mee en leg ik je uit wat er gaat gebeuren";
     }
 
     private string Text2()
@@ -184,7 +189,7 @@ public class IntroManager : MonoBehaviour
 
     private string Text7()
     {
-        return $"Onderweg Komen we stukjes informatie tegen. Door weer door te bewegen verdwijnen deze automatisch!\n {Name}, heel veel succes!";
+        return $"Onderweg Komen we stukjes informatie tegen. Door weer door te bewegen verdwijnen deze automatisch!\n {PlayerPrefs.GetString("name")}, heel veel succes!";
     }
     #endregion
 }
