@@ -11,4 +11,5 @@ public class PatientInfo
     public string behandelPlan;
     public string naamArts;
     public string eersteAfspraak;
+    public float positionX;
 }

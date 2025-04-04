@@ -24,6 +24,14 @@ public class PatientInfoApiClient : MonoBehaviour
         return ParsePatientInfoResponse(webRequestResponse);
     }
 
+    public async Awaitable<IWebRequestReponse> PutPatientInfo(PatientInfo updatedPatientInfo)
+    {
+        string route = "/PatientInfo";
+        string data = JsonUtility.ToJson(updatedPatientInfo);
+        IWebRequestReponse webRequestResponse = await webClient.SendPutRequest(route, data);
+        return ParsePatientInfoResponse(webRequestResponse);
+    }
+
     public async Awaitable<IWebRequestReponse> DeletePatientInfo(string Id)
     {
         string route = "/environments/" + Id;

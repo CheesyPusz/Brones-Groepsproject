@@ -95,7 +95,8 @@ public class IntroManager : MonoBehaviour
                 // Save the name and behandelPlan values in local variables
                 Name = firstPatientInfo.name;
                 route = firstPatientInfo.behandelPlan;
-
+                PlayerPrefs.SetFloat("PositionX", firstPatientInfo.positionX);
+                PlayerPrefs.SetString("id", firstPatientInfo.userId);
                 Debug.Log($"Patient: {firstPatientInfo.name}, Doctor: {firstPatientInfo.naamArts}, Route: {route}");
                 Change();
                 break;
@@ -132,44 +133,44 @@ public class IntroManager : MonoBehaviour
     #region Texten 
     private string Text1()
     {
-        return $"Hallo {Name}!!\nIk ben Jeff en heb mijn spaakbeen gebroken bij de judo ik loop met je mee door de stappen van jouw proces ";
+        return $"Hallo {Name}!!\nIk ben Gekke Henkie en ik heb al 10 botjes gebroken, omdat ik zo bekend ben met het ziekenhuis ga ik met je mee en leg ik je uit wat er gaat gebeuren";
     }
 
     private string Text2()
     {
         if (route == "B")
         {
-            return $"Je hebt iets ernstig gebroken en moet geopereerd worden door een dokter daarom ben je vast een beetje bang";
+            return $"Net als mij heb jij ook een botje gebroken, om die te repareren moeten de dokters jou opereren, Dit kan een beetje eng zijn.";
         }
         else
         {
-            return $"Je hebt iets gebroken maar gelukkig is het niet heel erg  ";
+            return $"Net als mij heb jij ook een botje gebroken, die moet weer gerepareerd worden.";
         }
     }
 
     private string Text3()
     {
-        return $"Maar maak je niet druk \nJe bent in goede handen en hoeft je nergens druk over te maken";
+        return $"Maar maak je maar niet druk, je bent in goede handen bij de dokters en zei gaan voor jou het botje weer repareren, je hoeft dus niet bang te zijn.";
     }
 
     private string Text4()
     {
-        return $"In deze app gaan wij jou stap voor stap uitleggen hoe jouw bot gaat genezen door samen met mij route {route} te belopen.";
+        return $"Gelukkig heb jij precies hetzelfde botje gebroken als mij en het is even erg, daarom lopen wij samen door de stappen en leg ik je alles uit.";
     }
 
     private string Text5()
     {
-        return $"Als het goed is heeft een ouder je net geholpen met in te loggen. Vraag of die ook mee wil kijken naar het spel";
+        return $"Het enige dat ik wil is dat jij je ouders erbij roept, zodat zij ook de stappen begrijpen en weten wat er gaat gebeuren";
     }
 
     private string Text6()
     {
-        return $"Bewegen doe je met de pijltjes toetsen voor links en naar rechts of met de knoppen A en D op het toetsenbord!!";
+        return $"Je kunt bewegen met de pijltjes toetsen op het toetsenbord of met A om naar links te gaan en D om naar rechts te gaan.";
     }
 
     private string Text7()
     {
-        return $"Onderweg Komen we stukjes informatie tegen. Door weer door te bewegen verdwijnen deze automatisch!\n {Name} heel veel succes";
+        return $"Onderweg Komen we stukjes informatie tegen. Door weer door te bewegen verdwijnen deze automatisch!\n {Name}, heel veel succes!";
     }
     #endregion
 }

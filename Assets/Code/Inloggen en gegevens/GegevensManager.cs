@@ -77,7 +77,8 @@ public class GegevensManager : MonoBehaviour
             dateOfBirth = DateOfBirth.ToString("yyyy-MM-ddTHH:mm:ss"),
             behandelPlan = selectedRoute,
             naamArts = textArts,
-            eersteAfspraak = afspraakDate.ToString("yyyy-MM-ddTHH:mm:ss")
+            eersteAfspraak = afspraakDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+            positionX = -133.0f
         };
         IWebRequestReponse webRequestResponse = await patientInfoApiClient.CreatePatientInfo(patientInfo);
         //PlayerPrefs.SetString("PatientName", name);
